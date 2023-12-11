@@ -11,7 +11,7 @@ function NewsItemDetails() {
 
   useEffect(() => {
     async function getNewsItem() {
-      const URL = `http://hn.algolia.com/api/v1/items/${id}`;
+      const URL = `https://hn.algolia.com/api/v1/items/${id}`;
       const response = await fetch(URL);
       const data = await response.json();
       const itemDetails = {
@@ -21,6 +21,7 @@ function NewsItemDetails() {
         url: data.url,
       };
       updateIsLoading(false);
+
       updateNewsItem(itemDetails);
 
     }
