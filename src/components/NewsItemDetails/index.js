@@ -48,10 +48,14 @@ function NewsItemDetails() {
           <div className='childrens'>
             <h4>Comments:</h4>
             <ul className='comments-list'>
-              {!newsItem.childrens ? <p className='no-comments'>No Comments</p> : newsItem.childrens.map((comment, index) => (
-                <li className='comment-item' key={index} dangerouslySetInnerHTML={{ __html: comment.text }} />
-              ))}
-            </ul>
+  {newsItem.childrens.length === 0 ? (
+    <p className='no-comments'>No Comments</p>
+  ) : (
+    newsItem.childrens.map((comment, index) => (
+      <li className='comment-item' key={index} dangerouslySetInnerHTML={{ __html: comment.text }} />
+    ))
+  )}
+</ul>
           </div>
         </div>
       )}
